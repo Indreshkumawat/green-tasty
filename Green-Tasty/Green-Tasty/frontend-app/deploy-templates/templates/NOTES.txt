@@ -1,0 +1,1 @@
+1. Application frontend-app has been successfully deployed!!

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Performance Reports</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #EDF7ED;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2E8B57;
+        }
+        p {
+            margin: 15px 0;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background: #2E8B57;
+            color: white;
+            border-radius: 8px 8px 0 0;
+            margin: 0;
+        }
+
+        /* Table Container */
+        .table-container {
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #2E8B57;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        tr:hover {
+            background-color: #f4f4f4;
+        }
+        td a {
+            color: #2E8B57;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        td a:hover {
+            color: #1C5A40;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsive Design */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Weekly Performance Reports</h1>
+
+<p>Dear Restaurant Manager,</p>
+<p>Please find below the detailed summaries of this week's performance reports. Review the performance of your staff and locations carefully and download the respective documents from the links provided below.</p>
+
+<!-- Staff Performance Table -->
+<div class="table-container">
+    <h2>Staff Performance Summary</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Report Type</th>
+            <th>Download CSV</th>
+            <th>Download PDF</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Staff Performance</td>
+            <td><a th:href="${csvWaiterUrl}" target="_blank">Download CSV</a></td>
+            <td><a th:href="${pdfWaiterUrl}" target="_blank">Download PDF</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Location Performance Table -->
+<div class="table-container">
+    <h2>Location Performance Summary</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Report Type</th>
+            <th>Download CSV</th>
+            <th>Download PDF</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Location Performance</td>
+            <td><a th:href="${csvLocationUrl}" target="_blank">Download CSV</a></td>
+            <td><a th:href="${pdfLocationUrl}" target="_blank">Download PDF</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    <p>Thank you for trusting us with your restaurant's performance analysis.</p>
+    <p><b>Team 9</b></p>
+</div>
+</body>
+</html>
